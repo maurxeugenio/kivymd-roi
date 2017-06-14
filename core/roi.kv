@@ -1,0 +1,25 @@
+#:import MDRaisedButton kivymd.button.MDRaisedButton
+#:import MDTextField kivymd.textfields.MDTextField
+#:import MDLabel kivymd.label.MDLabel
+BoxLayout:
+  id: layout
+  orientation: 'vertical'
+  padding: 30
+  MDTextField:
+    id: lucro
+    hint_text: 'Lucro'
+    size_hint_x: 1
+  MDTextField:
+    id: custo
+    hint_text: 'Custo'
+    size_hint_x: 1
+  MDRaisedButton:
+    id: calculo_roi
+    size_hint: 1, .2
+    text: 'Calcular'
+    on_press: app.calcular_roi(lucro.text, custo.text, label)
+  MDLabel:
+    id: label
+    text: 'Resultado'
+    font_size: 40
+    color: 1, 1, 1
